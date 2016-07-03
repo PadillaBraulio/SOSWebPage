@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='bootstrap/css/bootstrap.min.css' rel="stylesheet">
+    <link href='stylesheets/blog.css' rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Emergencias</a>
+          <a class="blog-nav-item" href="#">Acerca de</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">SOSapp</h1>
+        <p class="lead blog-description">Centro de gestión de emergencias.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+        <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Emergencia</th>
+                    <th>Telefono</th>
+                    <th>Ambulancia</th>
+                    <th>Asignar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="danger" >
+                    <td>1001</td>
+                    <td>55888288</td>
+                    <td>
+                      <input class="form-control" id="inputEmail3" placeholder=" Numero de ambulancia">
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-warning">AsignarAmbulancia</button> 
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr class="danger" >
+                    <td>1002</td>
+                    <td>50173600</td>
+                    <td>
+                      <input class="form-control" id="inputEmail3" placeholder=" Numero de ambulancia">
+                    </td>
+                    <td>
+                      <button type="button"  class="btn btn-warning">AsignarAmbulancia</button> 
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr class="warning" >
+                    <td>1003</td>
+                    <td>50173600</td>
+                    <td>160</td>
+                    <td>
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr class="warning">
+                    <td>1004</td>
+                    <td>42729424</td>
+                    <td>122</td>
+                    <td>
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr class="success">
+                    <td>1004</td>
+                    <td>22324678</td>
+                    <td>122</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Tabla</h4>
+            <p ><font size="4" color="red">Emergencias entrantes</font></p>
+            <p><font size="4" color="orange">Emergencias en ambulancias</font></p>
+            <p><font size="4" color="green">Emergencias finalizadas</font></p>
+          </div>
+         
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>

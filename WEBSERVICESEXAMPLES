@@ -1,0 +1,10 @@
+Getemergencybyid
+http://localhost:3000/webservices/getEmergencyByID?emergencyid=576d7cb8601cd60a13d9db4b
+getallemergencys
+http://localhost:3000/webservices/getAllEmergency
+put emergency
+http://localhost:3000/webservices/PutEmergency?latitude=14&longitude=15&telefone=55888288
+setcar
+http://localhost:3000/webservices/SetCarByID?emergencyid=576d7cb8601cd60a13d9db4b&carid=123
+finishemergencybyid
+http://localhost:3000/webservices/finishEmergencyByID?emergencyid=576d7cb8601cd60a13d9db4b

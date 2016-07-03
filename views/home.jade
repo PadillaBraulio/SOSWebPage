@@ -1,0 +1,52 @@
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Blog Template for Bootstrap
+    // Bootstrap core CSS
+    link(href='bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='stylesheets/blog.css', rel='stylesheet')
+  body
+    .blog-masthead
+      .container
+        nav.blog-nav
+          a.blog-nav-item.active(href='#') Emergencias
+          a.blog-nav-item(href='#') Acerca de
+    .container
+      .blog-header
+        h1.blog-title SOSapp
+        p.lead.blog-description Centro de gestión de emergencias.
+      .row
+        .col-sm-8.blog-main
+          .table-responsive
+            table#mtable.table.table-striped
+              thead
+                tr
+                  th Emergencia
+                  th Telefono
+                  th Ambulancia
+                  th Asignar
+              tbody
+            script(src='/socket.io/socket.io.js')
+            script(src='javascripts/table.js')
+
+        // /.blog-main
+        .col-sm-3.col-sm-offset-1.blog-sidebar
+          .sidebar-module.sidebar-module-inset
+            h4 Tabla
+            p
+              font(size='4', color='red') Emergencias entrantes
+            p
+              font(size='4', color='orange') Emergencias en ambulancias
+            p
+              font(size='4', color='green') Emergencias finalizadas
+        // /.row
+      // /.container
+      //
+        Bootstrap core JavaScript
+        ==================================================
+      // Placed at the end of the document so the pages load faster
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+      script(src='bootstrap/js/bootstrap.min.js')
+      // IE10 viewport hack for Surface/desktop Windows 8 bug
