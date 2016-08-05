@@ -52,6 +52,31 @@ router.get('/PutEmergency*', function(req, res) {
    console.log(req.url);
 });
 
+router.get('/Get', function(req, res) {
+	var str = req.url.split('?')[1];
+  	var array = qs.parse(str);
+  	console.log('longitud del arreglo');
+  	console.log(Object.keys(array).length);
+
+  	console.log('longitud del arreglo');
+	if (Object.keys(array).length == 3){
+		var latitude = array['latitude'];
+		var longitude = array['longitude'];
+		var telefone = array['telefone'];
+		var stats = "Waiting";
+		emergency.newEmergency(latitude,longitude,telefone,stats);
+		emergency.insertEmergency();
+		changeData.change();
+		var val = 0;
+		res.send("{result: \'emergency putted satisfactory \'}");
+	}
+	else{
+   		res.send('{error:\'this function need three parameters\' }');
+	};
+
+   console.log(req.url);
+});
+
 router.get('/getAllEmergency',function(req,res){
 	emergency.getAllEmergency(function(cursor) {
 	    res.send("{ result : " + JSON.stringify(cursor) + "}");	
@@ -123,6 +148,21 @@ router.get('/finishEmergencyByID',function(req,res){
 		res.send('{error:\'finishEmergencyById function need one parameters\' }');
 	}
 });
+router.get('/getEmergencyByAmbulance*',function(req,res){
+	var str = req.url.split('?')[1];
+  	var array = qs.parse(str);
+  	if (Object.keys(array).length == 1){
+  		var id = array["Ambulanceid"];
+		emergency.getEmergencyByAmbulance(id,function(doc)
+		{
+			res.send(  JSON.stringify(doc) );
+		});
+	}
+	else{
+		res.send('{error:\'finishEmergencyById function need one parameters\' }');
+	}
+});
+
 function SocketFunction (socket) {
 
 	var val = -1;
