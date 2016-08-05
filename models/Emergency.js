@@ -6,7 +6,7 @@ var url = 'mongodb://localhost:27017/test';
 var Emergency = (function()
 {
 	//Private Default Object
-	//var EmergencyObject = {};
+	var EmergencyObject = {};
 	return {
 		newEmergency: function(latitude,longitude,telefone,stats)
 		{
@@ -123,9 +123,37 @@ var Emergency = (function()
 			});
       
 
+		},
+		getEmergencyByAmbulance: function( ambulanceID,asyncallback)
+		{
+			console.log("entra al metodo");
+			var today = new Date();
+			today.setHours(0);
+			today.setMinutes(0);
+			today.setMilliseconds(0);
+			console.log(today);
+			var findEmergency = function(db, callback) {
+			    db.collection('emergency').find({"ambulance":ambulanceID,
+			     	stats:"InProcess",
+			     	date:{$gte: today}
+			     }).toArray(function(err, doc){
+			    	callback(doc);
+			    });
+			};
+			
+			MongoClient.connect(url, function(err, db) {
+			  assert.equal(null, err);
+			  findEmergency(db, function(doc) {
+			    db.close();
+			    asyncallback(doc);	
+			  });
+			});
+      //new Date()
+
 		}
 	}
-})();
+	}
+)();
 
 
 
