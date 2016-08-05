@@ -43,7 +43,13 @@ var Emergency = (function()
 
 		getAllEmergency : function(asyncallback){
 			var findRestaurants = function(db, callback) {
-			    db.collection('emergency').find({}).toArray(function(err, documents) {
+				var today = new Date();
+				today.setHours(0);
+				today.setMinutes(0);
+				today.setMilliseconds(0);
+			    db.collection('emergency').find({
+			    	date:{$gte: today}
+			    }).toArray(function(err, documents) {
 			        assert.equal(null, err);
 			        //console.log(cursor);
 			        cursor = documents;
@@ -131,7 +137,6 @@ var Emergency = (function()
 			today.setHours(0);
 			today.setMinutes(0);
 			today.setMilliseconds(0);
-			console.log(today);
 			var findEmergency = function(db, callback) {
 			    db.collection('emergency').find({"ambulance":ambulanceID,
 			     	stats:"InProcess",
