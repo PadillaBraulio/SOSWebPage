@@ -1,6 +1,6 @@
 
 
-  var socket = io.connect('http://localhost:3002');
+  var socket = io.connect('http://54.218.223.170:3002');
   var firstTime = true;
   var sizearray = 0;
   var deletetable = function()
@@ -104,11 +104,10 @@
 			asignbutton.className = "btn btn-warning";
 			asignbutton.value = "Asignar ambulancia"
 			asignbutton.onclick = setAmbulance;
-
+			numEmergencia.innerHTML = array[i]["latitude"] + " / " + array[i]["longitude"];
 
 	    	switch(array[i]["stats"]) {
 			    case "Waiting":
-			    	numEmergencia.innerHTML = "En espera";
 			    	row.className = "danger" //warning, success
 			    	ambulancia.appendChild(ambulanceinput);
 					asignar.appendChild(asignbutton);
@@ -116,14 +115,12 @@
 			    	//console.log("waiting");
 			        break;
 			    case "InProcess":
-			    	numEmergencia.innerHTML = "En ambulancia";
 			    	row.className = "warning" //danger, success
 			    	ambulancia.innerHTML = array[i]["ambulance"];
 			    	asignar.appendChild(deletebutton);
 			    	//console.log("Inprocess");
 			        break;
 			    case "Finish":
-			    	numEmergencia.innerHTML = "Finalizada";
 			    	row.className = "success" //danger, succes
 			    	ambulancia.innerHTML = "";
 			    	asignar.innerHTML = "";
