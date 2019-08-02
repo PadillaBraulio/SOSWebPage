@@ -28,6 +28,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/PutEmergency*', function(req, res) {
+	let sam = 0;
 	var str = req.url.split('?')[1];
   	var array = qs.parse(str);
   	console.log('longitud del arreglo');
