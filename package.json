@@ -12,7 +12,7 @@
     "express": "~4.13.4",
     "jade": "^1.11.0",
     "jade-bootstrap": "^1.0.6",
-    "mongodb": "^2.1.18",
+    "mongodb": "^3.1.13",
     "morgan": "~1.7.0",
     "node-express-json-rpc2": "^1.0.2",
     "serve-favicon": "~2.3.0",
